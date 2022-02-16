@@ -1,4 +1,4 @@
-package com.revature.save_the_date;
+package com.revature.save_the_date.web.servlets;
 
 import java.io.IOException;
 
