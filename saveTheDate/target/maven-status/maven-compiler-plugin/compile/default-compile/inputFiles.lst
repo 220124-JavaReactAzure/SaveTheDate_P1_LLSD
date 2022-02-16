@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+C:\Users\lewis\Desktop\220124-JavaReactAzure\CupoJava\SaveTheDate_P1_LLSD\saveTheDate\src\main\java\com\revature\save_the_date\RegisterServlet.java
+C:\Users\lewis\Desktop\220124-JavaReactAzure\CupoJava\SaveTheDate_P1_LLSD\saveTheDate\src\main\java\com\revature\save_the_date\TestServlet.java
+=======
 C:\Program Files\Java\220124-JavaReactAzure\p1\SaveTheDate_P1_LLSD\saveTheDate\src\main\java\com\revature\save_the_date\dao\RegistryDAO.java
 C:\Program Files\Java\220124-JavaReactAzure\p1\SaveTheDate_P1_LLSD\saveTheDate\src\main\java\com\revature\save_the_date\models\Attendee.java
 C:\Program Files\Java\220124-JavaReactAzure\p1\SaveTheDate_P1_LLSD\saveTheDate\src\main\java\com\revature\save_the_date\exceptions\AuthenticationException.java
@@ -22,3 +26,4 @@ C:\Program Files\Java\220124-JavaReactAzure\p1\SaveTheDate_P1_LLSD\saveTheDate\s
 C:\Program Files\Java\220124-JavaReactAzure\p1\SaveTheDate_P1_LLSD\saveTheDate\src\main\java\com\revature\save_the_date\web\servlets\AuthServlet.java
 C:\Program Files\Java\220124-JavaReactAzure\p1\SaveTheDate_P1_LLSD\saveTheDate\src\main\java\com\revature\save_the_date\web\dto\LoginCredentials.java
 C:\Program Files\Java\220124-JavaReactAzure\p1\SaveTheDate_P1_LLSD\saveTheDate\src\main\java\com\revature\save_the_date\web\servlets\EmployeeServlet.java
+>>>>>>> origin/scott_test
