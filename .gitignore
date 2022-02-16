@@ -3,3 +3,4 @@ resources/
 .metadata/
 *.class
 *.properties
+*.factorypath
