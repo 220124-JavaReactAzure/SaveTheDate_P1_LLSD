@@ -14,6 +14,7 @@ C:\Program Files\Java\220124-JavaReactAzure\p1\SaveTheDate_P1_LLSD\saveTheDate\s
 C:\Program Files\Java\220124-JavaReactAzure\p1\SaveTheDate_P1_LLSD\saveTheDate\src\main\java\com\revature\save_the_date\services\EspousedService.java
 C:\Program Files\Java\220124-JavaReactAzure\p1\SaveTheDate_P1_LLSD\saveTheDate\src\main\java\com\revature\save_the_date\web\servlets\AttendeeServlet.java
 C:\Program Files\Java\220124-JavaReactAzure\p1\SaveTheDate_P1_LLSD\saveTheDate\src\main\java\com\revature\save_the_date\services\AttendeeService.java
+C:\Program Files\Java\220124-JavaReactAzure\p1\SaveTheDate_P1_LLSD\saveTheDate\src\main\java\com\revature\save_the_date\dao\RegisterDAO.java
 C:\Program Files\Java\220124-JavaReactAzure\p1\SaveTheDate_P1_LLSD\saveTheDate\src\main\java\com\revature\save_the_date\web\servlets\AuthServlet.java
 C:\Program Files\Java\220124-JavaReactAzure\p1\SaveTheDate_P1_LLSD\saveTheDate\src\main\java\com\revature\save_the_date\web\dto\LoginCredentials.java
 C:\Program Files\Java\220124-JavaReactAzure\p1\SaveTheDate_P1_LLSD\saveTheDate\src\main\java\com\revature\save_the_date\web\servlets\EmployeeServlet.java
@@ -24,5 +25,6 @@ C:\Program Files\Java\220124-JavaReactAzure\p1\SaveTheDate_P1_LLSD\saveTheDate\s
 C:\Program Files\Java\220124-JavaReactAzure\p1\SaveTheDate_P1_LLSD\saveTheDate\src\main\java\com\revature\save_the_date\services\RegistryService.java
 C:\Program Files\Java\220124-JavaReactAzure\p1\SaveTheDate_P1_LLSD\saveTheDate\src\main\java\com\revature\save_the_date\models\Espoused.java
 C:\Program Files\Java\220124-JavaReactAzure\p1\SaveTheDate_P1_LLSD\saveTheDate\src\main\java\com\revature\save_the_date\exceptions\ResourcePersistanceException.java
+C:\Program Files\Java\220124-JavaReactAzure\p1\SaveTheDate_P1_LLSD\saveTheDate\src\main\java\com\revature\save_the_date\services\RegisterService.java
 C:\Program Files\Java\220124-JavaReactAzure\p1\SaveTheDate_P1_LLSD\saveTheDate\src\main\java\com\revature\save_the_date\web\servlets\RegisterServlet.java
 C:\Program Files\Java\220124-JavaReactAzure\p1\SaveTheDate_P1_LLSD\saveTheDate\src\main\java\com\revature\save_the_date\web\servlets\WeddingServlet.java
