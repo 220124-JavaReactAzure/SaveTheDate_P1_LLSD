@@ -3,3 +3,5 @@ resources/
 .metadata/
 *.class
 *.properties
+*.factorypath
+*.jar
