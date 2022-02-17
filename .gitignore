@@ -1,7 +1,10 @@
 bin/
 resources/
+target/
 .metadata/
 *.class
 *.properties
 *.factorypath
-*.jar
+*.war
+.settings
+.projects
