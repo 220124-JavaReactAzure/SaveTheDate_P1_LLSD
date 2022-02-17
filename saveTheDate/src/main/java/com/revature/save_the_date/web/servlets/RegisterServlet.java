@@ -12,9 +12,10 @@ import javax.servlet.http.HttpServletResponse;
 public class RegisterServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-		resp.getWriter().write("<head><title>Save The Date</title></head>");
-		resp.getWriter().write("<div id = 'logo'> <img src='./images/savethedate.png' alt='logos'/> </div>"
-				+ "<h1>Save The Date !</h1>");
+		resp.getWriter().write("<head><title>Save The Date</title></head>"
+				+ "");
+		resp.getWriter().write(" <img src='./images/savethedate.png' alt='logos'/>"
+				+ "");
 		resp.getWriter()
 				.write("<h2>Wedding Registration</h2>");
 		
@@ -30,7 +31,7 @@ public class RegisterServlet extends HttpServlet {
 				+ "<option value='St. Mark's Cathedral'>St. Mark's Cathedral</option>"
 				+ "<option value='French Man's Cove'>French Man's Cove</option>"
 				+ "<option value='Blue Lagoon'>Blue Lagoon</option></select></li>"
-				+ ""
+				+ "<li><p>Please choose a date </span><input type='date' name='date' id='date' '/>"
 				// Number of guests
 				+ "<li><form method='post'><label for'guests'>How many Guests ?</label><input type='number' id='guests' guests='guests'/></li></ul>"
 				+ "<h2> Available for Hire </h2>"
@@ -60,9 +61,11 @@ public class RegisterServlet extends HttpServlet {
 						// css below
 						+"<style type=text/css>"
 						+ "*{ font-family: Arial,Verdana, sans-serif;" + "color: #665544;}"
-								+ "#hire, li{border-bottom:1px solid #efefef;margin:10px;padding-bottom:10px;width: 400px;}"
-						+ "h1{background-color:#efefef;margin-top: 20px;padding:10px 0px 5px 0px;width: 400px"
-						+ "#logo {width: 150px;margin 10px auto 25px auto;}</style>");
+						+ "#hire, li{border-bottom:1px solid #efefef;margin:10px;padding-bottom:10px;width: 400px;}"
+						+ "h1{background-color:#efefef;margin-top: 20px;padding:10px 0px 5px 0px;width: 400px;}"
+						+ "img.align-center {display:block;margin:0px auto;}"
+						+ "</style>"
+						+ "");
 	}
 
 }
