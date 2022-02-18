@@ -8,26 +8,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.revature.save_the_date.services.RegisterService;
+@WebServlet(value = "/register")
+public class RegisterServlet extends HttpServlet {
 
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
+		resp.getWriter().write("<head><title>Save The Date</title></head>" + "");
+		resp.getWriter().write(" <img src='./images/savethedate.png' alt='logos'/>" + "");
+		resp.getWriter().write("<h2>Wedding Registration</h2>");
 
-public class RegisterServlet extends HttpServlet{
-
-	
-	
-	public RegisterServlet(RegisterService registerService) {
-		// TODO Auto-generated constructor stub
-	}
-
-	protected void doGet(HttpServletRequest req,HttpServletResponse resp)throws IOException, ServletException  {
-		resp.getWriter().write("<head><title>Save The Date</title></head>");
-		resp.getWriter().write("<div id = 'logo'> <img src='./images/savethedate.png' alt='logos'/> </div>"
-				+ "<h1>Save The Date !</h1>");
-		resp.getWriter()
-				.write("<h2>Wedding Registration</h2>");
-		
-		resp.getWriter().write("<ul>"
-				+ "<li>	 "
+		resp.getWriter().write("<ul>" + "<li>	 "
 				+ "<form method='post><label for'bname'>Please enter Bride's Name:</label><input type='text' id='bname'  name='bname'/></li>"
 				+ "<li>	"
 				+ "<label for'gname'>Please enter Groom's Name:</label><input type='text' id='gname'  name='gname'/></li>"
