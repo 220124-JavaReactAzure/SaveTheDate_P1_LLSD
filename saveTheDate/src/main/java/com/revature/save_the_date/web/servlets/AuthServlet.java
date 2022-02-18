@@ -1,5 +1,7 @@
 package com.revature.save_the_date.web.servlets;
 
-public class AuthServlet {
+import javax.servlet.http.HttpServlet;
+
+public class AuthServlet extends HttpServlet {
 
 }
