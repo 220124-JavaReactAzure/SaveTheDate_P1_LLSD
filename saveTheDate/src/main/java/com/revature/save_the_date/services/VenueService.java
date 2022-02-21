@@ -2,13 +2,19 @@ package com.revature.save_the_date.services;
 
 import java.util.List;
 
+import com.revature.save_the_date.dao.VenueDAO;
 import com.revature.save_the_date.models.Venue;
 
 public class VenueService {
+	private final VenueDAO venueDAO;
 
-	public VenueService() {
+	public VenueService(VenueDAO venueDAO) {
 		super();
-		// TODO Auto-generated constructor stub
+		this.venueDAO = venueDAO;
+	}
+	
+	public boolean addVenue(Venue venue) {
+		return venueDAO.addVenue(venue);
 	}
 	
 	public List<Venue> getAllVenue(){

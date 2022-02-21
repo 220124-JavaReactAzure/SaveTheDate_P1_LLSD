@@ -10,7 +10,7 @@ import com.revature.save_the_date.hibernate.util.HibernateUtil;
 import com.revature.save_the_date.models.Venue;
 import com.revature.save_the_date.models.Wedding;
 
-public class venueDAO {
+public class VenueDAO {
 	
 	public boolean addVenue(Venue venue) {
 		try {
@@ -28,7 +28,7 @@ public class venueDAO {
 		return null;
 	}
 	
-	public Wedding getVenueById(int id) {
+	public Venue getVenueById(int id) {
 		return null;
 	}
 	
