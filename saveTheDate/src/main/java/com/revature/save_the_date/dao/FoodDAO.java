@@ -11,7 +11,7 @@ import com.revature.save_the_date.models.Food;
 
 public class FoodDAO {
 
-	public boolean addWedding(Food food) {
+	public boolean addFood(Food food) {
 		try {
 			Session session = HibernateUtil.getSession();
 			session.save(food);

@@ -14,7 +14,7 @@ import com.revature.save_the_date.models.Registry;
 
 public class RegistryDAO {
 
-	public boolean addWedding(Registry registry) {
+	public boolean addRegistry(Registry registry) {
 		try {
 			Session session = HibernateUtil.getSession();
 			session.save(registry);

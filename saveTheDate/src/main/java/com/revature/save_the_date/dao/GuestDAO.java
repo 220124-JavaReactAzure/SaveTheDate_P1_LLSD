@@ -11,7 +11,7 @@ import com.revature.save_the_date.models.Guest;
 
 public class GuestDAO {
 
-	public boolean addWedding(Guest guest) {
+	public boolean addGuest(Guest guest) {
 		try {
 			Session session = HibernateUtil.getSession();
 			session.save(guest);

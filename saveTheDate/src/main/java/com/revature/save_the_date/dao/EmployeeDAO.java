@@ -12,7 +12,7 @@ import com.revature.save_the_date.models.Employee;
 
 public class EmployeeDAO {
 	
-	public boolean addWedding(Employee employee) {
+	public boolean addEmployee(Employee employee) {
 		try {
 			Session session = HibernateUtil.getSession();
 			session.save(employee);
