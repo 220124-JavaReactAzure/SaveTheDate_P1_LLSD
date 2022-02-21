@@ -1,5 +1,7 @@
 package com.revature.save_the_date.models;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,30 +11,32 @@ import javax.persistence.Table;
 
 @Entity
 @Table
-public class Employee {
+public class Guest {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "employee_id")
-	private String employee_id;
+	@Column(name = "guest_id")
+	private String guest_id;
+
 	@Column(name = "fname")
 	private String fname;
+
 	@Column(name = "lname")
 	private String lname;
-	@Column(name = "role")
-	private String role;
+	
 	@Column(name = "email")
 	private String email;
 	@Column(name = "password")
 	private String password;
 
 	// getters and setters
-	public String getEmployee_id() {
-		return employee_id;
+
+	public String getGuest_id() {
+		return guest_id;
 	}
 
-	public void setEmployee_id(String employee_id) {
-		this.employee_id = employee_id;
+	public void setGuest_id(String guest_id) {
+		this.guest_id = guest_id;
 	}
 
 	public String getFname() {
@@ -49,14 +53,6 @@ public class Employee {
 
 	public void setLname(String lname) {
 		this.lname = lname;
-	}
-
-	public String getRole() {
-		return role;
-	}
-
-	public void setRole(String role) {
-		this.role = role;
 	}
 
 	public String getEmail() {
@@ -77,9 +73,10 @@ public class Employee {
 
 	@Override
 	public String toString() {
-		return "Employee [employee_id=" + employee_id + ", fname=" + fname + ", lname=" + lname + ", role=" + role
-				+ ", email=" + email + ", password=" + password + "]";
+		return "Guest [guest_id=" + guest_id + ", fname=" + fname + ", lname=" + lname + ", email=" + email
+				+ ", password=" + password + "]";
 	}
+	
 	
 	
 
