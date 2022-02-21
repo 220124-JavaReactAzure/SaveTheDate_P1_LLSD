@@ -29,7 +29,7 @@ public class ContextLoaderListener implements ServletContextListener{
 		WeddingDAO weddingDAO = new WeddingDAO();
 		
 		WeddingService weddingService = new WeddingService(weddingDAO);
-		EmployeeService employeeService = new EmployeeService(employeeDAO, weddingService);
+		//EmployeeService employeeService = new EmployeeService(employeeDAO, weddingService);
 		RegistryService registryService = new RegistryService(registryDAO, weddingService);
 	
 		logger.info("Application initialized@");

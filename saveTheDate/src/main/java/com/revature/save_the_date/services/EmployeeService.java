@@ -6,6 +6,8 @@ import com.revature.save_the_date.dao.EmployeeDAO;
 import com.revature.save_the_date.models.Employee;
 
 public class EmployeeService {
+	
+	private final EmployeeDAO employeeDAO;
 
 	public EmployeeService(EmployeeDAO employeeDAO) {
 		this.employeeDAO = employeeDAO;
