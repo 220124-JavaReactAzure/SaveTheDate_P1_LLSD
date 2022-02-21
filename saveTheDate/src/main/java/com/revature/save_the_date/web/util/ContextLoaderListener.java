@@ -18,7 +18,6 @@ import com.revature.save_the_date.dao.EspousedDAO;
 import com.revature.save_the_date.dao.RegisterDAO;
 import com.revature.save_the_date.dao.RegistryDAO;
 import com.revature.save_the_date.dao.WeddingDAO;
-import com.revature.save_the_date.services.AttendeeService;
 import com.revature.save_the_date.services.EmployeeService;
 import com.revature.save_the_date.services.EspousedService;
 import com.revature.save_the_date.services.RegisterService;
@@ -35,7 +34,7 @@ import com.revature.save_the_date.web.servlets.WeddingServlet;
 public class ContextLoaderListener implements ServletContextListener{
 
 	private final Logger logger = LogManager.getLogger();
-	
+
 	@Override
 	public void contextInitialized(ServletContextEvent sce) {
 		
@@ -78,12 +77,11 @@ public class ContextLoaderListener implements ServletContextListener{
 		context.addServlet("RegisterServlet", registerServlet).addMapping("/register/*");
 		logger.info("Application initialized");
 	}
-	
-		@Override
-		public void contextDestroyed(ServletContextEvent sce) {
-			// TODO Auto-generated method stub
-			ServletContextListener.super.contextDestroyed(sce);
-		}
-			
+
+	@Override
+	public void contextDestroyed(ServletContextEvent sce) {
+		// TODO Auto-generated method stub
+		ServletContextListener.super.contextDestroyed(sce);
+	}
 
 }
