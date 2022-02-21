@@ -8,8 +8,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/home")
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.revature.save_the_date.services.AttendeeService;
+import com.revature.save_the_date.services.EmployeeService;
+import com.revature.save_the_date.services.EspousedService;
+import com.revature.save_the_date.services.WeddingService;
+
+//@WebServlet("/home")
 public class WeddingServlet extends HttpServlet{
+	public WeddingServlet(WeddingService weddingService, EspousedService espousedService,
+			EmployeeService employeeService, AttendeeService attendeeService, ObjectMapper mapper) {
+		// TODO Auto-generated constructor stub
+	}
+
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		

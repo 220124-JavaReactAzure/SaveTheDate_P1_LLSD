@@ -8,8 +8,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(value="/employee")
+import com.revature.save_the_date.services.EmployeeService;
+
+//@WebServlet(value="/employee")
 public class EmployeeServlet extends HttpServlet{
+	public EmployeeServlet(EmployeeService employeeService) {
+		// TODO Auto-generated constructor stub
+	}
+
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		resp.getWriter().write("<head><title>Save The Date !</title></head>"

@@ -8,8 +8,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(value = "/register")
+import com.revature.save_the_date.services.RegisterService;
+
+//@WebServlet(value = "/register")
 public class RegisterServlet extends HttpServlet {
+
+	public RegisterServlet(RegisterService registerService) {
+		// TODO Auto-generated constructor stub
+	}
 
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 		resp.getWriter().write("<head><title>Save The Date</title></head>" + "");
