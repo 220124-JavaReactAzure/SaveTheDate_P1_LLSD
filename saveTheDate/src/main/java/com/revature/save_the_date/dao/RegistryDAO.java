@@ -22,6 +22,8 @@ public class RegistryDAO {
 			return true;
 		} catch (HibernateException | IOException e) {
 			e.printStackTrace();
+			HibernateUtil.closeSession();
+
 			return false;
 		}
 	}

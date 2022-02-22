@@ -8,7 +8,6 @@ import org.hibernate.Session;
 
 import com.revature.save_the_date.hibernate.util.HibernateUtil;
 import com.revature.save_the_date.models.Employee;
-import com.revature.save_the_date.models.Employee;
 
 public class EmployeeDAO {
 	
@@ -20,6 +19,7 @@ public class EmployeeDAO {
 			return true;
 		} catch (HibernateException | IOException e) {
 			e.printStackTrace();
+			HibernateUtil.closeSession();
 			return false;
 		}
 	}

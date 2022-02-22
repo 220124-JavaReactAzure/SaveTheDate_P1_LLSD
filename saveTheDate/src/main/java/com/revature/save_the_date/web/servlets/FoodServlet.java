@@ -11,16 +11,16 @@ import javax.servlet.http.HttpServletResponse;
 import com.fasterxml.jackson.core.exc.StreamReadException;
 import com.fasterxml.jackson.databind.DatabindException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.revature.save_the_date.models.Guest;
-import com.revature.save_the_date.services.GuestService;
+import com.revature.save_the_date.models.Food;
+import com.revature.save_the_date.services.FoodService;
 
-public class GuestServlet extends HttpServlet {
+public class FoodServlet extends HttpServlet {
 
-	private final GuestService guestService;
+	private final FoodService foodService;
 	private final ObjectMapper mapper;
 
-	public GuestServlet(GuestService guestService, ObjectMapper mapper) {
-		this.guestService = guestService;
+	public FoodServlet(FoodService foodService, ObjectMapper mapper) {
+		this.foodService = foodService;
 		this.mapper = mapper;
 	}
 
@@ -29,8 +29,8 @@ public class GuestServlet extends HttpServlet {
 
 		resp.setContentType("application/json");
 		try {
-			Guest newGuest = mapper.readValue(req.getInputStream(), Guest.class);
-			boolean wasRegistered = guestService.addGuest(newGuest);
+			Food newFood = mapper.readValue(req.getInputStream(), Food.class);
+			boolean wasRegistered = foodService.addFood(newFood);
 			if (wasRegistered) {
 				resp.setStatus(200);
 			} else {
@@ -44,7 +44,5 @@ public class GuestServlet extends HttpServlet {
 		}
 
 	}
-
-public class GuestServlet extends  HttpServlet{
 
 }

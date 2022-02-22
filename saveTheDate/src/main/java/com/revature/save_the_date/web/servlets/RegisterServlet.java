@@ -17,12 +17,9 @@ import com.revature.save_the_date.services.RegisterService;
 public class RegisterServlet extends HttpServlet {
 	
 	private final org.apache.logging.log4j.Logger logger = LogManager.getLogger();
-
-
-	public RegisterServlet(RegisterService registerService, ObjectMapper mapper) {
-		// TODO Auto-generated constructor stub
-	}
-
+	
+	
+	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 		logger.info("Register Servlet Running");
