@@ -8,17 +8,22 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.logging.log4j.LogManager;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.revature.save_the_date.services.RegisterService;
 
-//@WebServlet(value = "/register")
+
 public class RegisterServlet extends HttpServlet {
 	
 	private final org.apache.logging.log4j.Logger logger = LogManager.getLogger();
 
-	public RegisterServlet(RegisterService registerService) {
+
+	public RegisterServlet(RegisterService registerService, ObjectMapper mapper) {
 		// TODO Auto-generated constructor stub
 	}
 
+	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 		logger.info("Register Servlet Running");
 		resp.getWriter().write("<head><title>Save The Date</title></head>" + "");

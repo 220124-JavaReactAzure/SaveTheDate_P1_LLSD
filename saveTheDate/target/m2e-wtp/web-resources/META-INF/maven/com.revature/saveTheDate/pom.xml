@@ -58,11 +58,7 @@
 			<artifactId>jackson-datatype-hibernate5</artifactId>
 			<version>2.13.1</version>
 		</dependency>
-<<<<<<< HEAD
 		
-=======
-		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
->>>>>>> a6fa1938209c253c464c36d2870e1639ed3c1a45
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
