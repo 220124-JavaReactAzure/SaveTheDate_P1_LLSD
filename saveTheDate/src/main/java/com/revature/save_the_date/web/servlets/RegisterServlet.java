@@ -9,13 +9,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.core.Logger;
 
 @WebServlet(value = "/register")
 public class RegisterServlet extends HttpServlet {
 	
 	private final org.apache.logging.log4j.Logger logger = LogManager.getLogger();
-
+	
+	
+	
+	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 		logger.info("Register Servlet Running");
 		resp.getWriter().write("<head><title>Save The Date</title></head>" + "");
