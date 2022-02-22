@@ -19,6 +19,7 @@ public class GuestDAO {
 			return true;
 		} catch (HibernateException | IOException e) {
 			e.printStackTrace();
+			HibernateUtil.closeSession();
 			return false;
 		}
 	}

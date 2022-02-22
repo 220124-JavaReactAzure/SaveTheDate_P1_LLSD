@@ -19,11 +19,24 @@ public class FoodDAO {
 			return true;
 		} catch (HibernateException | IOException e) {
 			e.printStackTrace();
+			HibernateUtil.closeSession();
+
 			return false;
 		}
 	}
 
 	public List<Food> getAllFoods() {
+		try {
+			Session session = HibernateUtil.getSession();
+			HibernateUtil.closeSession();
+			
+		} catch (HibernateException | IOException e) {
+			e.printStackTrace();
+			HibernateUtil.closeSession();
+			return null;
+
+			
+		}
 		return null;
 	}
 

@@ -17,26 +17,35 @@ import com.revature.save_the_date.services.WeddingService;
 @WebServlet(value = "/wedding")
 public class WeddingServlet extends HttpServlet {
 
-	/*
-	 * private final WeddingService weddingService; private final ObjectMapper
-	 * mapper;
-	 * 
-	 * public WeddingServlet(WeddingService weddingService, ObjectMapper mapper) {
-	 * this.weddingService = weddingService; this.mapper = mapper; }
-	 * 
-	 * @Override protected void doPost(HttpServletRequest req, HttpServletResponse
-	 * resp) throws ServletException, IOException {
-	 * 
-	 * resp.setContentType("application/json"); try { Wedding newWedding =
-	 * mapper.readValue(req.getInputStream(), Wedding.class); boolean wasRegistered
-	 * = weddingService.addWedding(newWedding); if (wasRegistered) {
-	 * resp.setStatus(200); } else { resp.setStatus(500); } } catch
-	 * (StreamReadException | DatabindException e) { // TODO: handle exception
-	 * resp.setStatus(400); e.printStackTrace(); } catch (Exception e) {
-	 * resp.setStatus(500); e.printStackTrace(); }
-	 * 
-	 * }
-	 */
+	private final WeddingService weddingService;
+	private final ObjectMapper mapper;
+
+	public WeddingServlet(WeddingService weddingService, ObjectMapper mapper) {
+		this.weddingService = weddingService;
+		this.mapper = mapper;
+	}
+
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+		resp.setContentType("application/json");
+		try {
+			Wedding newWedding = mapper.readValue(req.getInputStream(), Wedding.class);
+			boolean wasRegistered = weddingService.addWedding(newWedding);
+			if (wasRegistered) {
+				resp.setStatus(200);
+			} else {
+				resp.setStatus(500);
+			}
+		} catch (StreamReadException | DatabindException e) { // TODO: handle exception
+			resp.setStatus(400);
+			e.printStackTrace();
+		} catch (Exception e) {
+			resp.setStatus(500);
+			e.printStackTrace();
+		}
+
+	}
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

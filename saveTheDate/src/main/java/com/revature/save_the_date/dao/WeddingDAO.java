@@ -19,6 +19,8 @@ public class WeddingDAO {
 			return true;
 		} catch (HibernateException | IOException e) {
 			e.printStackTrace();
+			HibernateUtil.closeSession();
+
 			return false;
 		}
 	}

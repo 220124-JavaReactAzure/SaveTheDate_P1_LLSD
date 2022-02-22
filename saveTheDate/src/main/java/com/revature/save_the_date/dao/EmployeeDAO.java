@@ -19,6 +19,7 @@ public class EmployeeDAO {
 			return true;
 		} catch (HibernateException | IOException e) {
 			e.printStackTrace();
+			HibernateUtil.closeSession();
 			return false;
 		}
 	}
