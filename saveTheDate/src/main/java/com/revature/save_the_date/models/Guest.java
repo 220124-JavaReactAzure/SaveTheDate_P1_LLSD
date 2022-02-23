@@ -58,6 +58,13 @@ public class Guest {
 		this.email = email;
 		this.password = password;
 	}
+	
+
+	public Guest() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 
 	// getters and setters
 	public int getGuest_id() {

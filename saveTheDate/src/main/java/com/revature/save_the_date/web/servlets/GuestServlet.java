@@ -45,6 +45,7 @@ public class GuestServlet extends HttpServlet {
 			boolean wasRegistered = guestService.addGuest(newGuest);
 			if (wasRegistered) {
 				resp.setStatus(200);
+				resp.getWriter().write("Data persistsed");
 			} else {
 				resp.setStatus(500);
 			}
