@@ -20,12 +20,6 @@ public class RegisterServlet extends HttpServlet {
 	
 	
 	
-	public RegisterServlet(RegisterService registerService, ObjectMapper mapper) {
-		// TODO Auto-generated constructor stub
-	}
-
-
-
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 		logger.info("Register Servlet Running");
