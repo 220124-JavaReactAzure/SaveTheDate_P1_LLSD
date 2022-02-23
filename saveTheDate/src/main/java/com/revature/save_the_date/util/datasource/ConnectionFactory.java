@@ -22,7 +22,7 @@ public class ConnectionFactory {
 	private ConnectionFactory() {
 		try {
 			ClassLoader loader = Thread.currentThread().getContextClassLoader();
-			prop.load(loader.getResourceAsStream("db.properties"));
+			prop.load(loader.getResourceAsStream("hibernate.properties"));
 		}catch(FileNotFoundException e) {
 			e.printStackTrace();
 		}catch(IOException e) {
@@ -37,7 +37,7 @@ public class ConnectionFactory {
 	public Connection getConnection() {
 		Connection conn = null;
 		try {
-			conn = DriverManager.getConnection(prop.getProperty("url"),prop.getProperty("admin"),prop.getProperty("password"));
+			conn = DriverManager.getConnection(prop.getProperty("url"),prop.getProperty("username"),prop.getProperty("password"));
 		}catch (SQLException e) {
 			e.printStackTrace();
 		}

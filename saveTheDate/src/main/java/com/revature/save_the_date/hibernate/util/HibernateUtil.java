@@ -36,8 +36,7 @@ public class HibernateUtil {
 			
 			configuration.addAnnotatedClass(Wedding.class);
 			//service registry
-			ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties()).build();
-			sessionFactory = configuration.buildSessionFactory(serviceRegistry);
+			
 			
 			// ?????
 			configuration.addAnnotatedClass(Employee.class);
@@ -46,7 +45,8 @@ public class HibernateUtil {
 			configuration.addAnnotatedClass(Food.class);
 			configuration.addAnnotatedClass(Registry.class);
 
-
+			ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties()).build();
+			sessionFactory = configuration.buildSessionFactory(serviceRegistry);
 			
 		} if(session == null) {
 			//singleton implementation lazily constructed

@@ -10,14 +10,15 @@ import com.revature.save_the_date.hibernate.util.HibernateUtil;
 
 public class HibernateUtilTestSuite {
 	@Test
-	public void test_getSession_returnValidSession_giverProvidedCredentials() {
+	public void test_getSession_returnsValidSessuib_givenProviderCredentials() {
 		try {
 			Session sess = HibernateUtil.getSession();
-			HibernateUtil.closeSession();
 			System.out.println(sess);
-			assertNotNull(sess);
-		}catch(Exception e) {
+			HibernateUtil.closeSession();
 			
+			assertNotNull(sess);
+		} catch (Exception e) {
+			// TODO: handle exception
 		}
 	}
 

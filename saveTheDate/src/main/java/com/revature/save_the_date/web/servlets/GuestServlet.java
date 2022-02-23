@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.logging.log4j.LogManager;
+
 import com.fasterxml.jackson.core.exc.StreamReadException;
 import com.fasterxml.jackson.databind.DatabindException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -16,6 +18,9 @@ import com.revature.save_the_date.services.GuestService;
 
 public class GuestServlet extends HttpServlet {
 
+	private final org.apache.logging.log4j.Logger logger = LogManager.getLogger();
+
+	
 	private final GuestService guestService;
 	private final ObjectMapper mapper;
 
@@ -24,6 +29,13 @@ public class GuestServlet extends HttpServlet {
 		this.mapper = mapper;
 	}
 
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
+		logger.info("Guest Servlet Running...");
+		resp.getWriter().write("<head><title>Save The Date</title></head>" + "");
+		resp.getWriter().write(" <img src='./images/savethedate.png' alt='logos'/>" + "");
+		resp.getWriter().write("<h2>Guest Information</h2>");
+	}
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
@@ -44,7 +56,5 @@ public class GuestServlet extends HttpServlet {
 		}
 
 	}
-
-public class GuestServlet extends  HttpServlet{
 
 }

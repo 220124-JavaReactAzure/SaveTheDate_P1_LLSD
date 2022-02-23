@@ -19,15 +19,15 @@ public class GuestService {
 	}
 	
 	public List<Guest> getAllGuests() {
-		return null;
+		return guestDAO.getAllGuests();
 	}
 
 	public Guest getGuestById(int id) {
-		return null;
+		return guestDAO.getGuestById(id);
 	}
 
 	public void updateGuestWithSessionMethod(Guest guest) {
-
+		
 	}
 
 	public void updateGuestWithHQL(Guest guest) {
