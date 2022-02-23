@@ -15,7 +15,6 @@ import com.revature.save_the_date.models.Wedding;
 import com.revature.save_the_date.services.WeddingService;
 import com.revature.save_the_date.web.util.ContextLoaderListener;
 
-@WebServlet(value = "/wedding")
 public class WeddingServlet extends HttpServlet {
 
 	private final WeddingService weddingService;
@@ -46,8 +45,10 @@ public class WeddingServlet extends HttpServlet {
 			boolean wasRegistered = weddingService.addWedding(newWedding);
 			if (wasRegistered) {
 				resp.setStatus(200);
+				resp.getWriter().write("Data Persisted");
 			} else {
 				resp.setStatus(500);
+				resp.getWriter().write("data did not persist");
 			}
 		} catch (StreamReadException | DatabindException e) { // TODO: handle exception
 			resp.setStatus(400);
@@ -59,5 +60,13 @@ public class WeddingServlet extends HttpServlet {
 
 	}
 
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		resp.getWriter()
+				.write("<head><title>Save The Date !</title></head>"
+						+ "<img src='./images/savethedate.png' alt='logos'/>" + "<body>" + "<h1> Home </h1>"
+						+ "<div id='intro'> " + "<style type=text/css>" + "body {background-color: #79525C;}" + ""
+						+ "</body>" + "</style>");
+	}
 
 }
