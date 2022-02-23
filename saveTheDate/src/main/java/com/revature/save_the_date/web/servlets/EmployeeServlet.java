@@ -15,7 +15,6 @@ import com.revature.save_the_date.models.Employee;
 import com.revature.save_the_date.models.Wedding;
 import com.revature.save_the_date.services.EmployeeService;
 
-@WebServlet(value = "/employee")
 public class EmployeeServlet extends HttpServlet {
 
 	private final EmployeeService employeeService;

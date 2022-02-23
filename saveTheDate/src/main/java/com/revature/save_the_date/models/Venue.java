@@ -18,6 +18,8 @@ public class Venue {
 	private String venue_id;
 	@Column(name="venue_name")
 	private String venue_name;
+	@Column(name="contact")
+	private String contact;
 	
 	
 	
@@ -33,6 +35,12 @@ public class Venue {
 	}
 	public void setVenue_name(String venue_name) {
 		this.venue_name = venue_name;
+	}
+	public String getContact() {
+		return contact;
+	}
+	public void setContact(String contact) {
+		this.contact = contact;
 	}
 	
 	

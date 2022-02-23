@@ -14,7 +14,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.revature.save_the_date.models.Wedding;
 import com.revature.save_the_date.services.WeddingService;
 
-@WebServlet(value = "/wedding")
 public class WeddingServlet extends HttpServlet {
 
 	private final WeddingService weddingService;
@@ -34,8 +33,10 @@ public class WeddingServlet extends HttpServlet {
 			boolean wasRegistered = weddingService.addWedding(newWedding);
 			if (wasRegistered) {
 				resp.setStatus(200);
+				resp.getWriter().write("Data Persisted");
 			} else {
 				resp.setStatus(500);
+				resp.getWriter().write("data did not persist");
 			}
 		} catch (StreamReadException | DatabindException e) { // TODO: handle exception
 			resp.setStatus(400);
