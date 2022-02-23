@@ -28,6 +28,8 @@ public class Wedding {
 	
 	
 	
+	
+	
 
 	public Wedding() {
 		super();

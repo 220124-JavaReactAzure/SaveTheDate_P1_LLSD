@@ -18,8 +18,12 @@ public class Venue {
 	private String venue_id;
 	@Column(name="venue_name")
 	private String venue_name;
-	@Column(name="contact")
-	private String contact;
+	@Column(name="pnone_no")
+	private int phone;
+	@Column(name="capacity")
+	private int capacity;	
+	@Column(name="address")
+	private String address;
 	
 	
 	
@@ -36,11 +40,23 @@ public class Venue {
 	public void setVenue_name(String venue_name) {
 		this.venue_name = venue_name;
 	}
-	public String getContact() {
-		return contact;
+	public int getContact() {
+		return phone;
 	}
-	public void setContact(String contact) {
-		this.contact = contact;
+	public void setContact(int phone) {
+		this.phone = phone;
+	}
+	public int getCapacity() {
+		return capacity;
+	}
+	public void setCapacity(int capacity) {
+		this.capacity = capacity;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
 	}
 	
 	

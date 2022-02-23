@@ -27,24 +27,28 @@ public class VenueServlet extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-		Random r = new Random();
-		int id = r.nextInt(99999999);
 
 		String venue_name = req.getParameter("venue_name");
+		String phone = req.getParameter("phone_no");
 
 		resp.getWriter().write("<head><title>Save The Date</title></head>" + "");
 		resp.getWriter().write(" <img src='./images/savethedate.png' alt='logos'/>" + "");
 		resp.getWriter()
 				.write("<h2>Venue Registration</h2>" + "<p>Venue ID:</p> "
-						+ "<form action='request.getContextPath() %>/venue', method='post'>"
-						+ "Venue Name: <input type='text' name='VenueName'><br><br>"
-						+ "<input type='submit' value='register'</form>");
+		
+						+ "<form action='<%=request.getContextPath() %>/venue/' method='post'>"
+						+ "Venue Name: <input type='text' name='venue_name'><br><br>"
+						+ "Phone Number: <input type='number' name='phone_no'>"
+						+ "Capacity: <input type='number' name='capacity'>"
+						+ "Address: <input type='text' name='address'>"
+						+ "<input type='submit' value='Submit'</form>");
 	}
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-		resp.setContentType("application/json");
+		resp.setContentType("application/json");	
+		
 		try {
 			Venue newVenue = mapper.readValue(req.getInputStream(), Venue.class);
 			boolean wasRegistered = venueService.addVenue(newVenue);
