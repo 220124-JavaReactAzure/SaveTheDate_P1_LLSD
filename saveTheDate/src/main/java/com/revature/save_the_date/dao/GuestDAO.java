@@ -3,13 +3,11 @@ package com.revature.save_the_date.dao;
 import java.io.IOException;
 import java.util.List;
 
-import javax.persistence.TypedQuery;
 
 import java.io.IOException;
 import java.util.List;
 
 import org.hibernate.HibernateException;
-
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.postgresql.core.Query;
@@ -23,7 +21,7 @@ public class GuestDAO {
 			Session session = HibernateUtil.getSession();
 			Transaction transaction = session.beginTransaction();
 
-			session.save(guest);
+			session.save(guest); 
 			transaction.commit();
 			
 			HibernateUtil.closeSession();
@@ -32,15 +30,13 @@ public class GuestDAO {
 			e.printStackTrace();
 			HibernateUtil.closeSession();
 			return false;
-		} finally {
-			HibernateUtil.closeSession();
-		}
+		} 
 	}
 
 	public List<Guest> getAllGuests() {
 		try {
 			Session session = HibernateUtil.getSession();
-			List<Guest> guests = session.createQuery("FROM guests").list();
+			List<Guest> guests = session.createQuery("from guest").list();
 			return guests;
 		} catch (Exception e) {
 			e.printStackTrace();

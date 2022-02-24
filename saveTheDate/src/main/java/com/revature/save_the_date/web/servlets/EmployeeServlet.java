@@ -25,25 +25,6 @@ public class EmployeeServlet extends HttpServlet {
 		this.mapper = mapper;
 	}
 
-	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-		resp.setContentType("application/json");
-		try {
-			Employee newEmployee = mapper.readValue(req.getInputStream(), Employee.class);
-			boolean wasRegistered = employeeService.addEmployee(newEmployee);
-			if (wasRegistered) {
-				resp.setStatus(200);
-			} else {
-				resp.setStatus(500);
-			}
-		} catch (StreamReadException | DatabindException e) { // TODO: handle exception
-			resp.setStatus(400);
-			e.printStackTrace();
-		} catch (Exception e) {
-			resp.setStatus(500);
-			e.printStackTrace();
-		}
-	}
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -95,6 +76,25 @@ public class EmployeeServlet extends HttpServlet {
 				+ "    this.classList.toggle('active');" + "    var content = this.nextElementSibling;"
 				+ "    if (content.style.display) {" + "      content.style.display = 'none';" + "    } else {"
 				+ "      content.style.display = 'block' ;" + "    }" + "  });" + "}" + "</script>" + "");
+	}
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
+		resp.setContentType("application/json");
+		try {
+			Employee newEmployee = mapper.readValue(req.getInputStream(), Employee.class);
+			boolean wasRegistered = employeeService.addEmployee(newEmployee);
+			if (wasRegistered) {
+				resp.setStatus(200);
+			} else {
+				resp.setStatus(500);
+			}
+		} catch (StreamReadException | DatabindException e) { // TODO: handle exception
+			resp.setStatus(400);
+			e.printStackTrace();
+		} catch (Exception e) {
+			resp.setStatus(500);
+			e.printStackTrace();
+		}
 	}
 
 }

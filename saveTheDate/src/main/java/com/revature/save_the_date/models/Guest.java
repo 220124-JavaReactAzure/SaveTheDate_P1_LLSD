@@ -10,8 +10,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
 @Entity
-@Table(name = "guests")
+@Table(name = "guest")
 public class Guest {
 
 	@Id
@@ -71,6 +74,10 @@ public class Guest {
 		return guest_id;
 	}
 
+	public void setGuest_id(int guest_id) {
+		this.guest_id = guest_id;
+	}
+	
 	public int getPlus_one() {
 		return plus_one;
 	}
@@ -95,9 +102,6 @@ public class Guest {
 		this.plus_one_food = plus_one_food;
 	}
 
-	public void setGuest_id(int guest_id) {
-		this.guest_id = guest_id;
-	}
 
 	public String getFname() {
 		return fname;
@@ -144,7 +148,7 @@ public class Guest {
 
 	@Override
 	public String toString() {
-		return "Guest [guest_id=" + guest_id + ", fname=" + fname + ", lname=" + lname + ", plus_one=" + plus_one
+		return "guest [guest_id=" + guest_id + ", fname=" + fname + ", lname=" + lname + ", plus_one=" + plus_one
 				+ ", food=" + food + ", plus_one_food=" + plus_one_food + ", guest_type=" + guest_type + ", email="
 				+ email + ", password=" + password + "]";
 	}

@@ -10,6 +10,7 @@ public class EmployeeService {
 	private final EmployeeDAO employeeDAO;
 
 	public EmployeeService(EmployeeDAO employeeDAO) {
+		super();
 		this.employeeDAO = employeeDAO;
 		// TODO Auto-generated constructor stub
 	}
@@ -19,11 +20,11 @@ public class EmployeeService {
 	}
 	
 	public List<Employee> getAllEmployees(){
-		return null;
+		return employeeDAO.getAllEmployees();
 	}
 	
 	public Employee getEmployeeById(int id) {
-		return null;
+		return employeeDAO.getEmployeesById(id);
 	}
 	
 	public void updateEmployeeWithSessionMethod(Employee employee) {

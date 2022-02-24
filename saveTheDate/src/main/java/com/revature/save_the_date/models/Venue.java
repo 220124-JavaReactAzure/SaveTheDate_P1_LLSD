@@ -10,12 +10,12 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="venue")
+@Table(name = "venue")
 public class Venue {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="venue_id")
-	private String venue_id;
+	private int venue_id;
 	@Column(name="venue_name")
 	private String venue_name;
 	@Column(name="phone_no")
@@ -28,10 +28,10 @@ public class Venue {
 	
 	
 	///getters and setters
-	public String getVenue_id() {
+	public int getVenue_id() {
 		return venue_id;
 	}
-	public void setVenue_id(String venue_id) {
+	public void setVenue_id(int venue_id) {
 		this.venue_id = venue_id;
 	}
 	public String getVenue_name() {

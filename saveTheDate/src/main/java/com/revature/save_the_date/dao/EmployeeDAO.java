@@ -20,6 +20,7 @@ public class EmployeeDAO {
 
 			session.save(employee);
 			transaction.commit();
+			
 			HibernateUtil.closeSession();
 			return true;
 		} catch (HibernateException | IOException e) {
@@ -55,8 +56,18 @@ public class EmployeeDAO {
 		}
 	}
 
-	public void updateWeddingWithSessionMethod(Employee employee) {
-
+	public void updateEmployeeWithSessionMethod(Employee employee) {
+		try {
+			Session session = HibernateUtil.getSession();
+			// Updates and Deletes always start with a transaction and end with a commit
+			Transaction transaction = session.beginTransaction();
+			session.merge(employee);
+			transaction.commit();
+		} catch (HibernateException | IOException e) {
+			e.printStackTrace();
+		} finally {
+			HibernateUtil.closeSession();
+		}
 	}
 
 }
