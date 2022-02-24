@@ -9,9 +9,10 @@ import java.io.IOException;
 import java.util.List;
 
 import org.hibernate.HibernateException;
-import org.hibernate.Query;
+
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.postgresql.core.Query;
 
 import com.revature.save_the_date.models.Guest;
 import com.revature.save_the_date.hibernate.util.HibernateUtil;
@@ -39,7 +40,7 @@ public class GuestDAO {
 	public List<Guest> getAllGuests() {
 		try {
 			Session session = HibernateUtil.getSession();
-			List<Guest> guests = session.createQuery("FROM guest").list();
+			List<Guest> guests = session.createQuery("FROM guests").list();
 			return guests;
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -84,7 +85,7 @@ public class GuestDAO {
 			Session session = HibernateUtil.getSession();
 			Transaction transaction = session.beginTransaction();
 
-			Query query = session.createQuery("update guest set email='" + guest.getEmail() + "', fname='"
+			Query query = (Query) session.createQuery("update guest set email='" + guest.getEmail() + "', fname='"
 					+ guest.getFname() + "', lame='" + guest.getLname() + "', plus_one='" 
 					+ guest.getPlus_one() + "', food='" + guest.getFood() + "', plus_one_food'" 
 					+ guest.getPlus_one_food() + "', guest_type='" + guest.getGuest_type() 
