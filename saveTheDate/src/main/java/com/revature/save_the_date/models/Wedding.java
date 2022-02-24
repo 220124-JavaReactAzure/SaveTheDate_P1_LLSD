@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Wedding")
+@Table(name="wedding")
 public class Wedding {
 	
 	
@@ -22,7 +22,7 @@ public class Wedding {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="wedding_id")
-	private String wedding_id;
+	private int wedding_id;
 	
 	
 	
@@ -34,7 +34,7 @@ public class Wedding {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Wedding( String wedding_id, String wedding_venue, String wedding_date) {
+	public Wedding( int wedding_id, String wedding_venue, String wedding_date) {
 		super();
 		this.wedding_id = wedding_id;
 		this.wedding_venue = wedding_venue;
@@ -60,11 +60,11 @@ public class Wedding {
 		this.wedding_venue = wedding_venue;
 	}
 
-	public String getWedding_id() {
+	public int getWedding_id() {
 		return wedding_id;
 	}
 
-	public void setWedding_id(String wedding_id) {
+	public void setWedding_id(int wedding_id) {
 		this.wedding_id = wedding_id;
 	}
 	
