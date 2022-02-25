@@ -45,7 +45,7 @@ public class WeddingServlet extends HttpServlet {
 
 		String date = req.getParameter("wedding_date");
 		String venue = req.getParameter("wedding_venue");
-		//String id = req.getParameter("wedding_id");
+		String id = req.getParameter("wedding_id");
 		String bride = req.getParameter("bride");
 		String groom = req.getParameter("groom");
 		String party_size = req.getParameter("party_size");
@@ -58,7 +58,7 @@ public class WeddingServlet extends HttpServlet {
 
 
 		String json = new JSONObject().put("wedding_date", date)
-				.put("wedding_venue", venue)//.put("wedding_id", id)
+				.put("wedding_venue", venue).put("wedding_id", id)
 				.put("bride", bride)
 				.put("groom", groom)
 				.put("party_size", party_size)
@@ -75,6 +75,9 @@ public class WeddingServlet extends HttpServlet {
 			if (wasRegistered) {
 				resp.setStatus(200);
 				resp.getWriter().write("data persisted succesfully");
+				logger.info("Data persisted and now goes back to previous web page");
+
+				resp.sendRedirect("http://localhost:8080/saveTheDate/espoused.html");
 			} else {
 				resp.setStatus(500);
 			}

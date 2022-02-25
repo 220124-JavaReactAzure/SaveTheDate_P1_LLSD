@@ -22,6 +22,7 @@ public class GuestServlet extends HttpServlet {
 	private final ObjectMapper mapper;
 
 	public GuestServlet(GuestService guestService, ObjectMapper mapper) {
+		super();
 		this.guestService = guestService;
 		this.mapper = mapper;
 	}
@@ -30,30 +31,19 @@ public class GuestServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest req,HttpServletResponse resp) throws ServletException, IOException {
 		//resp.setContentType("application/json");
 		
-		resp.getWriter().write("<p>testtt</p>"
-				+ "<form action='http://localhost:8080/saveTheDate/guest/' method='post'>"
-				
-				+ "guest_id : <input type='text' name='guest_id'>"
-				+ "fname : <input type='text' name='fname'>"
-				+ "lname : <input type='text' name='lname'>"
-				+ "email : <input type='text' name='email'>"
-				+ "password : <input type='text' name='password'>"
-				+ "<input type = 'submit' value='Submit'>"
-				
-				+ "</form>");
+		
 		
 	}
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-		String guest_id = req.getParameter("guest_id");
 		String fname = req.getParameter("fname");
 		String lname = req.getParameter("lname");
 		String email = req.getParameter("email");
 		String password = req.getParameter("password");
 		
-		String json = new JSONObject().put("guest_id",guest_id)
+		String json = new JSONObject()
 				.put("fname",fname)
 				.put("lname",lname)
 				.put("email",email)

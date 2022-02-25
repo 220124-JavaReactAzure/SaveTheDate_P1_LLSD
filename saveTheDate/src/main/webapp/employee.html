@@ -16,58 +16,65 @@
 <h3>You are loggen in as: Tom Nash <h3> Your Schedule</h3><br>
 
 	<h2>>Please choose an option</h2>
+	
 	<details class=add>
 		<summary>Add Venue</summary><br>
-		<form action=http://localhost:8080/saveTheDate/venue/ method=post <br>venue_id : <input type=text name=venue_id><br>
+		<form action="http://localhost:8080/saveTheDate/venue/" method="post"
+		<br>venue_id : <input type=text name=venue_id><br>
 			<br>venue_name : <input type=text name=venue_name><br>
-			<br>phone_no : <input type=text name=phone_no><br>
+			<br>phone_no : <input type=tel name=phone_no><br>
 			<br>capacity : <input type=text name=capacity><br>
 			<br>address : <input type=text name=address><br>
-			<input type=submit value=Submit>
+			<input type=submit value=submit>
 		</form>
 	</details>
+	
 	<details class=add>
 		<summary>Add Florist</summary><br>
-		<form action=http://localhost:8080/saveTheDate/employee/ method=post <br>fname : <input type=text name=fname><br>
+		<form action="http://localhost:8080/saveTheDate/employee/" method="post" <br>
+			<br>fname : <input type=text name=fname><br>
 			<br>lname : <input type=text name=lname><br>
-			<br>role : <input type=text name=role placeholder=florist><br>
-			<br>email : <input type=text name=email><br>
-			<br>password : <input type=text name=password><br>
-
-			<input type=submit value=Submit>
+			<br>role : <input type=hidden name=role placeholder=florist><br>
+			<br>email : <input type=email name=email><br>
+			<br>password : <input type=password name=password><br>
+			<input type=submit value=Submit>			
 		</form>
 	</details>
+	
 	<details class=add>
 		<summary>Add Caterer</summary><br>
-		<form action=http://localhost:8080/saveTheDate/employee/ method=post <br>fname : <input type=text name=fname><br>
+		<form action=http://localhost:8080/saveTheDate/employee/ method=post <br>
+			<br>fname : <input type=text name=fname><br>
 			<br>lname : <input type=text name=lname><br>
-			<br>role : <input type=text name=role placeholder=caterer><br>
-			<br>email : <input type=text name=email><br>
-			<br>password : <input type=text name=password><br>
-
+			<br>role : <input type=hidden name=role placeholder=caterer><br>
+			<br>email : <input type=email name=email><br>
+			<br>password : <input type=password name=password><br>
 			<input type=submit value=Submit>
 		</form>
 	</details>
+	
 	<details class=add>
 		<summary>Add Photographer</summary><br>
-		<form action=http://localhost:8080/saveTheDate/employee/ method=post <br>fname : <input type=text name=fname>
+		<form action=http://localhost:8080/saveTheDate/employee/ method=post <br>
+			<br>fname : <input type=text name=fname>
 			<br>lname : <input type=text name=lname><br>
-			<br>role : <input type=text name=role placeholder=photographer><br>
-			<br>email : <input type=text name=email><br>
-			<br>password : <input type=text name=password><br>
-
+			<br>role : <input type=hidden name=role placeholder=photographer><br>
+			<br>email : <input type=email name=email><br>
+			<br>password : <input type=password name=password><br>
 			<input type=submit value=Submit>
 		</form>
 	</details>
+	
 	<details class=add>
 		<summary>Add Musician</summary><br>
-		<form action=http://localhost:8080/saveTheDate/employee/ method=post fname : <input type=text name=fname><br>
+		<form action=http://localhost:8080/saveTheDate/employee/ method=post <br>
+			<br>fname : <input type=text name=fname><br>
 			<br>lname : <input type=text name=lname><br>
-			<br>role : <input type=text name=role placeholder=musician><br>
-			<br>email : <input type=text name=email><br>
-			<br>password : <input type=text name=password><br>
+			<br>role : <input type=hidden name=role placeholder=musician><br>
+			<br>email : <input type=email name=email><br>
+			<br>password : <input type=password name=password><br>
 
-			<input type=submit value=Submit>
+			<input type=submit value=submit>
 		</form>
 	</details>
 	</div>

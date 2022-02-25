@@ -2,17 +2,14 @@ package com.revature.save_the_date.models;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table
+@Table(name="employee")
 public class Employee {
 
 	
-	private String employee_id;
 	@Column(name = "fname")
 	private String fname;
 	@Column(name = "lname")
@@ -34,9 +31,8 @@ public class Employee {
 		return fname;
 	}
 
-	public Employee(String employee_id, String fname, String lname, String role, String email, String password) {
+	public Employee( String fname, String lname, String role, String email, String password) {
 		super();
-		this.employee_id = employee_id;
 		this.fname = fname;
 		this.lname = lname;
 		this.role = role;
@@ -89,10 +85,11 @@ public class Employee {
 
 	@Override
 	public String toString() {
-		return "Employee [employee_id=" + employee_id + ", fname=" + fname + ", lname=" + lname + ", role=" + role
-				+ ", email=" + email + ", password=" + password + "]";
+		return "Employee [fname=" + fname + ", lname=" + lname + ", role=" + role + ", email=" + email + ", password="
+				+ password + "]";
 	}
 
+	
 	
 	
 	

@@ -8,49 +8,35 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table
+@Table(name="Guest")
 public class Guest {
 
-	
-	//@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "guest_id")
-	private String guest_id;
+	// @GeneratedValue(strategy = GenerationType.IDENTITY)
 
 	@Column(name = "fname")
 	private String fname;
 
 	@Column(name = "lname")
 	private String lname;
-	
+
 	@Id
 	@Column(name = "email")
 	private String email;
-	
+
 	@Column(name = "password")
 	private String password;
-	
-	
 
 	public Guest() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Guest(String guest_id, String fname, String lname, String email, String password) {
+	public Guest(String fname, String lname, String email, String password) {
 		super();
-		this.guest_id = guest_id;
 		this.fname = fname;
 		this.lname = lname;
 		this.email = email;
 		this.password = password;
-	}
-
-	public String getGuest_id() {
-		return guest_id;
-	}
-
-	public void setGuest_id(String guest_id) {
-		this.guest_id = guest_id;
 	}
 
 	public String getFname() {
@@ -87,13 +73,7 @@ public class Guest {
 
 	@Override
 	public String toString() {
-		return "Guest [guest_id=" + guest_id + ", fname=" + fname + ", lname=" + lname + ", email=" + email
-				+ ", password=" + password + "]";
+		return "fname=" + fname + ", lname=" + lname + ", email=" + email + ", password=" + password + "]";
 	}
-
-	
-	
-	
-	
 
 }

@@ -11,7 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="venue")
+@Table(name="Venue")
 public class Venue {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -68,6 +68,11 @@ public class Venue {
 	public Venue() {
 		super();
 		// TODO Auto-generated constructor stub
+	}
+	@Override
+	public String toString() {
+		return "Venue [venue_id=" + venue_id + ", venue_name=" + venue_name + ", phone_no=" + phone_no + ", capacity="
+				+ capacity + ", address=" + address + "]";
 	}
 	
 	

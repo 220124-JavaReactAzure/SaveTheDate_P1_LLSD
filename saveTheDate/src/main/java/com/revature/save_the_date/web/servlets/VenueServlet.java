@@ -36,14 +36,16 @@ public class VenueServlet extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-		String id = req.getParameter("venue_id");
-		String name = req.getParameter("venue_name");
-		String capacity = req.getParameter("capacity");
+		String venue_id = req.getParameter("venue_id");
+		String venue_name = req.getParameter("venue_name");
 		String phone_no = req.getParameter("phone_no");
+		String capacity = req.getParameter("capacity");
 		String address = req.getParameter("address");
 
 
-		String json = new JSONObject().put("venue_id", id).put("venue_name", name).put("phone_no", phone_no)
+		String json = new JSONObject().put("venue_id", venue_id)
+				.put("venue_name", venue_name)
+				.put("phone_no", phone_no)
 				.put("capacity", capacity)
 				.put("address",address)
 				.toString();
