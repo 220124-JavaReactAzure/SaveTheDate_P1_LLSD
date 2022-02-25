@@ -11,9 +11,7 @@ import javax.persistence.Table;
 @Table
 public class Employee {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "employee_id")
+	
 	private String employee_id;
 	@Column(name = "fname")
 	private String fname;
@@ -21,22 +19,36 @@ public class Employee {
 	private String lname;
 	@Column(name = "role")
 	private String role;
-	@Column(name = "email")
+	@Id
+	@Column(name = "email")	
 	private String email;
 	@Column(name = "password")
 	private String password;
 
 	// getters and setters
-	public String getEmployee_id() {
-		return employee_id;
-	}
-
-	public void setEmployee_id(String employee_id) {
-		this.employee_id = employee_id;
-	}
+	
+	
+	
 
 	public String getFname() {
 		return fname;
+	}
+
+	public Employee(String employee_id, String fname, String lname, String role, String email, String password) {
+		super();
+		this.employee_id = employee_id;
+		this.fname = fname;
+		this.lname = lname;
+		this.role = role;
+		this.email = email;
+		this.password = password;
+	}
+	
+	
+
+	public Employee() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 
 	public void setFname(String fname) {
@@ -80,6 +92,8 @@ public class Employee {
 		return "Employee [employee_id=" + employee_id + ", fname=" + fname + ", lname=" + lname + ", role=" + role
 				+ ", email=" + email + ", password=" + password + "]";
 	}
+
+	
 	
 	
 

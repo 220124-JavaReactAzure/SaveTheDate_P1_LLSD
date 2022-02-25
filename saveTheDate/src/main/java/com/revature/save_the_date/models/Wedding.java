@@ -35,16 +35,16 @@ public class Wedding {
 	private int budget;
 	
 	@Column(name="caterer")
-	private boolean caterer;
+	private String caterer;
 	
 	@Column(name="florist")
-	private boolean florist;
+	private String florist;
 	
 	@Column(name="photographer")
-	private boolean photographer;
+	private String photographer;
 	
 	@Column(name="musician")
-	private boolean musician;
+	private String musician;
 	
 	
 	
@@ -87,35 +87,39 @@ public class Wedding {
 		this.budget = budget;
 	}
 
-	public boolean isCaterer() {
+	
+
+	
+
+	public String getCaterer() {
 		return caterer;
 	}
 
-	public void setCaterer(boolean caterer) {
+	public void setCaterer(String caterer) {
 		this.caterer = caterer;
 	}
 
-	public boolean isFlorist() {
+	public String getFlorist() {
 		return florist;
 	}
 
-	public void setFlorist(boolean florist) {
+	public void setFlorist(String florist) {
 		this.florist = florist;
 	}
 
-	public boolean isPhotographer() {
+	public String getPhotographer() {
 		return photographer;
 	}
 
-	public void setPhotographer(boolean photographer) {
+	public void setPhotographer(String photographer) {
 		this.photographer = photographer;
 	}
 
-	public boolean isMusician() {
+	public String getMusician() {
 		return musician;
 	}
 
-	public void setMusician(boolean musician) {
+	public void setMusician(String musician) {
 		this.musician = musician;
 	}
 
@@ -129,7 +133,7 @@ public class Wedding {
 	//getters and setters
 
 	public Wedding(String wedding_date, String wedding_venue, String wedding_id, String bride, String groom,
-			int party_size, int budget, boolean caterer, boolean florist, boolean photographer, boolean musician) {
+			int party_size, int budget, String caterer, String florist, String photographer, String musician) {
 		super();
 		this.wedding_date = wedding_date;
 		this.wedding_venue = wedding_venue;

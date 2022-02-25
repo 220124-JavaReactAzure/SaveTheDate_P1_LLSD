@@ -28,6 +28,22 @@ public class Guest {
 	
 	@Column(name = "password")
 	private String password;
+	
+	
+
+	public Guest() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Guest(String guest_id, String fname, String lname, String email, String password) {
+		super();
+		this.guest_id = guest_id;
+		this.fname = fname;
+		this.lname = lname;
+		this.email = email;
+		this.password = password;
+	}
 
 	public String getGuest_id() {
 		return guest_id;

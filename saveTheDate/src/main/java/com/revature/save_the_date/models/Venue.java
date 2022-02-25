@@ -24,6 +24,8 @@ public class Venue {
 	@Column(name="capacity")
 	private int capacity;	
 	@Column(name="address")
+	
+	
 	private String address;
 	public String getVenue_id() {
 		return venue_id;
@@ -55,6 +57,19 @@ public class Venue {
 	public void setAddress(String address) {
 		this.address = address;
 	}
+	public Venue(String venue_id, String venue_name, int phone_no, int capacity, String address) {
+		super();
+		this.venue_id = venue_id;
+		this.venue_name = venue_name;
+		this.phone_no = phone_no;
+		this.capacity = capacity;
+		this.address = address;
+	}
+	public Venue() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
 	
 	
 	

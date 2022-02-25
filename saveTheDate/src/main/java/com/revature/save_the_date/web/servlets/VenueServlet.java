@@ -30,18 +30,7 @@ public class VenueServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 
-		//String venue_name = req.getParameter("venue_name");
-		//String phone = req.getParameter("phone_no");
-
-		resp.getWriter().write("<head><title>Save The Date</title></head>" + "");
-		resp.getWriter().write(" <img src='./images/savethedate.png' alt='logos'/>" + "");
-		resp.getWriter().write("<h2>Venue Registration</h2>" + "<p>Venue ID:</p> "
-
-				+ "<form action='http://localhost:8080/saveTheDate/venue/' method='post'>"
-				+ "venue_name: <input type='text' name='venue_name'><br><br>"
-				+ "phone_no: <input type='number' name='phone_no'>"
-				+ "capacity: <input type='number' name='capacity'>" + "address: <input type='text' name='address'>"
-				+ "<input type='submit' value='Submit'</form>");
+		
 	}
 
 	@Override
@@ -66,6 +55,7 @@ public class VenueServlet extends HttpServlet {
 				resp.getWriter().write("data persisted succesfully");
 			} else {
 				resp.setStatus(500);
+				resp.getWriter().write("Data did not persisted");
 			}
 		} catch (StreamReadException | DatabindException e) { // TODO: handle exception resp.setStatus(400);
 			e.printStackTrace();
