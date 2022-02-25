@@ -1,5 +1,6 @@
 package com.revature.save_the_date.models;
 
+
 import java.util.List;
 
 import javax.persistence.Column;
@@ -10,7 +11,9 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
+
 @Table(name = "venue")
+
 public class Venue {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,15 +23,15 @@ public class Venue {
 	private String venue_name;
 	@Column(name="phone_no")
 	private int phone_no;
-	@Column(name = "capacity")
-	private int capacity;
-	@Column(name = "address")
+
+	@Column(name="capacity")
+	private int capacity;	
+	@Column(name="address")
+	
+	
 	private String address;
-	
-	
-	
-	///getters and setters
-	public int getVenue_id() {
+	public String getVenue_id() {
+
 		return venue_id;
 	}
 	public void setVenue_id(int venue_id) {
@@ -42,9 +45,11 @@ public class Venue {
 	}
 	public int getPhone_no() {
 		return phone_no;
+
 	}
 	public void setPhone_no(int phone_no) {
 		this.phone_no = phone_no;
+
 	}
 	public int getCapacity() {
 		return capacity;
@@ -59,6 +64,12 @@ public class Venue {
 		this.address = address;
 	}
 
+	
+	
+	
+	
+	///getters and setters
+	
 	
 	
 	

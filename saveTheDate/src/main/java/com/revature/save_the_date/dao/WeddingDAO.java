@@ -9,7 +9,9 @@ import javax.persistence.TypedQuery;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+
 import org.hibernate.query.Query;
+
 
 import com.revature.save_the_date.hibernate.util.HibernateUtil;
 import com.revature.save_the_date.models.Guest;
@@ -20,7 +22,9 @@ public class WeddingDAO {
 	public boolean addWedding(Wedding wedding) {
 		try {
 			Session session = HibernateUtil.getSession();
+			Transaction transaction = session.beginTransaction();
 			session.save(wedding);
+			transaction.commit();
 			HibernateUtil.closeSession();
 			return true;
 		} catch (HibernateException | IOException e) {

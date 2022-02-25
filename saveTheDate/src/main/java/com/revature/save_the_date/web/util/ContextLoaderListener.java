@@ -78,7 +78,9 @@ public class ContextLoaderListener implements ServletContextListener {
 		context.addServlet("GuestServlet", guestServlet).addMapping("/guest/*");
 		context.addServlet("EmployeeServlet", employeeServlet).addMapping("/employee/*");
 		context.addServlet("VenueServlet", venueServlet).addMapping("/venue/*");
+
 		context.addServlet("RegisterServlet", registerServlet).addMapping("/register/*");
+
 
 		logger.info("Application initialized@");
 	}

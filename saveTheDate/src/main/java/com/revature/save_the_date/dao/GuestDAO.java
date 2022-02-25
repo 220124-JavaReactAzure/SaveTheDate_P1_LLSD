@@ -8,9 +8,12 @@ import java.io.IOException;
 import java.util.List;
 
 import org.hibernate.HibernateException;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+
 import org.postgresql.core.Query;
+
 
 import com.revature.save_the_date.models.Guest;
 import com.revature.save_the_date.hibernate.util.HibernateUtil;
@@ -21,9 +24,11 @@ public class GuestDAO {
 			Session session = HibernateUtil.getSession();
 			Transaction transaction = session.beginTransaction();
 
+
 			session.save(guest); 
 			transaction.commit();
 			
+
 			HibernateUtil.closeSession();
 			return true;
 		} catch (HibernateException | IOException e) {
@@ -56,6 +61,31 @@ public class GuestDAO {
 			return null;
 		} finally {
 			HibernateUtil.closeSession();
+		}
+	}
+
+	public Guest verify(String email, String password) {
+		try {
+			Session session = HibernateUtil.getSession();
+			String sql = "select from guest where (email,password) values ? ?";
+
+			Transaction transaction = session.beginTransaction();
+			transaction.commit();
+			Query<Guest> query = session.createQuery(sql);
+			Guest results = query.getSingleResult();
+			if (results != null) {
+
+				HibernateUtil.closeSession();
+				return results;
+			}else {
+				HibernateUtil.closeSession();
+				return results;
+			}
+
+
+		} catch (Exception e) {
+			// TODO: handle exception
+			return null;
 		}
 	}
 

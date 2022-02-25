@@ -1,7 +1,9 @@
 package com.revature.save_the_date.models;
 
+
 import java.util.List;
 import java.util.Objects;
+
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -14,6 +16,7 @@ import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 @Entity
+
 @Table(name = "guest")
 public class Guest {
 
@@ -21,6 +24,7 @@ public class Guest {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "guest_id")
 	private int guest_id;
+
 
 	@Column(name = "fname")
 	private String fname;
@@ -63,10 +67,12 @@ public class Guest {
 	}
 	
 
+
 	public Guest() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+
 
 
 	// getters and setters
@@ -76,6 +82,20 @@ public class Guest {
 
 	public void setGuest_id(int guest_id) {
 		this.guest_id = guest_id;
+
+	public Guest(String fname, String lname, String email, String password) {
+		super();
+		this.fname = fname;
+		this.lname = lname;
+		this.email = email;
+		this.password = password;
+	}
+
+	public Guest(String email, String password) {
+		super();
+		this.email = email;
+		this.password = password;
+
 	}
 	
 	public int getPlus_one() {
@@ -148,6 +168,7 @@ public class Guest {
 
 	@Override
 	public String toString() {
+
 		return "guest [guest_id=" + guest_id + ", fname=" + fname + ", lname=" + lname + ", plus_one=" + plus_one
 				+ ", food=" + food + ", plus_one_food=" + plus_one_food + ", guest_type=" + guest_type + ", email="
 				+ email + ", password=" + password + "]";
@@ -178,5 +199,6 @@ public class Guest {
 
 	
 	
+
 
 }

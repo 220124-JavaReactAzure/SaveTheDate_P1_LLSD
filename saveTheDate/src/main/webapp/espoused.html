@@ -1,0 +1,55 @@
+<img src='./images/savethedate.png' alt='logos' />
+<br>
+<script>
+	const detailsElement = document.querySelector('.add');
+
+	detailsElement.addEventListener('toggle', event => {
+		if (event.target.open) {
+			console.log('open');
+		} else {
+			console.log('closed');
+		}
+	});</script>
+
+
+
+<details class=add>
+	<summary>Register Your Wedding</summary><br>
+	<form action="http://localhost:8080/saveTheDate/wedding/" method="post" <br>wedding_date : <input type=date
+			name=wedding_date><br>
+		<br>wedding_venue : <input type=text name=wedding_venue><br>
+		<br>wedding_id : <input type=text name=wedding_id><br>
+		<br>bride : <input type=text name=bride><br>
+		<br>groom : <input type=text name=groom><br>
+		<br>party_size : <input type=number name=party_size><br>
+		<br>budget : <input type=number name=budget><br>
+		<br>caterer : <input type=checkbox name=caterer value="yes"><br>
+		<input type=hidden name=caterer value="no"><br>
+		<br>florist : <input type=checkbox name=florist value=yes><br>
+		<input type=hidden name=florist value="no"><br>
+		<br>fotographer : <input type=checkbox name=photographer value=yes><br>
+		<input type=hidden name=photographer value="no"><br>
+		<br>musician : <input type=checkbox name=musician value=yes><br>
+		<input type=hidden name=musician value="no"><br>
+
+		<input type=submit value=Submit>
+	</form>
+</details>
+
+<style type=text/css>
+	details summary::-webkit-details-marker {
+		display: none;
+	}
+
+	.active,
+	.collapsible:hover {
+		background-color: #ccc;
+	}
+
+	details summary {
+		cursor: pointer;
+	}
+
+	details summary>* {
+		display: inline;
+	}

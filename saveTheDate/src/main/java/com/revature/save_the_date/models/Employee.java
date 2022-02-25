@@ -3,9 +3,11 @@ package com.revature.save_the_date.models;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -19,6 +21,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 @Entity
+
 @Table(name = "employee")
 @JsonIdentityInfo(
 		  generator = ObjectIdGenerators.PropertyGenerator.class, 
@@ -31,6 +34,7 @@ public class Employee {
 	@Column(name = "employee_id")
 	private int employee_id;
 
+
 	@Column(name = "fname")
 	private String fname;
 
@@ -40,7 +44,10 @@ public class Employee {
 	@Column(name = "role")
 	private String role;
 
-	@Column(name = "email")
+
+	@Id
+	@Column(name = "email")	
+
 	private String email;
 
 	@Column(name = "password")
@@ -66,22 +73,39 @@ public class Employee {
 
 	}
 
-	public Employee() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+
 
 	// getters and setters
+
 	public int getEmployee_id() {
 		return employee_id;
 	}
 
 	public void setEmployee_id(int employee_id) {
 		this.employee_id = employee_id;
-	}
+
+	
+	
+	
 
 	public String getFname() {
 		return fname;
+	}
+
+	public Employee( String fname, String lname, String role, String email, String password) {
+		super();
+		this.fname = fname;
+		this.lname = lname;
+		this.role = role;
+		this.email = email;
+		this.password = password;
+
+	
+	
+
+	public Employee() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 
 	public void setFname(String fname) {
@@ -138,9 +162,11 @@ public class Employee {
 */
 	@Override
 	public String toString() {
+
 		return "Employee [employee_id=" + employee_id + ", fname=" + fname + ", lname=" + lname + ", role=" + role
 				+ ", email=" + email + ", password=" + password + ", cost=" + cost + "]";
 	}
+
 
 
 }

@@ -10,7 +10,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+
 import org.apache.logging.log4j.LogManager;
+
+import org.json.JSONObject;
+
 
 import com.fasterxml.jackson.core.exc.StreamReadException;
 import com.fasterxml.jackson.databind.DatabindException;
@@ -29,9 +33,29 @@ public class GuestServlet extends HttpServlet {
 	private final ObjectMapper mapper;
 
 	public GuestServlet(GuestService guestService, ObjectMapper mapper) {
+		super();
 		this.guestService = guestService;
 		this.mapper = mapper;
 	}
+	
+	@Override
+	protected void doGet(HttpServletRequest req,HttpServletResponse resp) throws ServletException, IOException {
+		//resp.setContentType("application/json");
+		String username = req.getParameter("email");
+		String password = req.getParameter("password");
+		
+		String json = new JSONObject()
+				.put("email", username)
+				.put("password", password).toString();
+		try {
+			Guest newGuest = mapper.readValue(json, Guest.class);
+		}catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+		
+	}
+
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
@@ -81,13 +105,27 @@ public class GuestServlet extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-		resp.setContentType("application/json");
+		String fname = req.getParameter("fname");
+		String lname = req.getParameter("lname");
+		String email = req.getParameter("email");
+		String password = req.getParameter("password");
+		
+		String json = new JSONObject()
+				.put("fname",fname)
+				.put("lname",lname)
+				.put("email",email)
+				.put("password", password)
+				.toString();
+		
 		try {
-			Guest newGuest = mapper.readValue(req.getInputStream(), Guest.class);
+			Guest newGuest = mapper.readValue(json, Guest.class);
 			boolean wasRegistered = guestService.addGuest(newGuest);
 			if (wasRegistered) {
 				resp.setStatus(200);
-				resp.getWriter().write("Data persistsed");
+
+
+				resp.getWriter().write("data persisted succesfully inte guest table");
+
 			} else {
 				resp.setStatus(500);
 			}
@@ -99,6 +137,7 @@ public class GuestServlet extends HttpServlet {
 		}
 
 	}
+
 	@Override
 	protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
@@ -149,5 +188,6 @@ public class GuestServlet extends HttpServlet {
 			break;
 		}
 	}
+
 
 }
