@@ -18,43 +18,46 @@ import com.revature.save_the_date.models.Venue;
 import com.revature.save_the_date.models.Wedding;
 
 public class HibernateUtil {
-	
-	//hibernate replaces connection factory
-	
+
+	// hibernate replaces connection factory
+
 	private static SessionFactory sessionFactory;
 	private static Session session;
-	
-	public static Session getSession() throws IOException{
-		
-		if(sessionFactory==null) {
+
+	public static Session getSession() throws IOException {
+
+		if (sessionFactory == null) {
 			Configuration configuration = new Configuration();
 			Properties props = new Properties();
 			ClassLoader loader = Thread.currentThread().getContextClassLoader();
 			props.load(loader.getResourceAsStream("hibernate.properties"));
-			
+
 			configuration.setProperties(props);
-			
 			configuration.addAnnotatedClass(Wedding.class);
-			//service registry
-			ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties()).build();
-			sessionFactory = configuration.buildSessionFactory(serviceRegistry);
-			
-			// ?????
 			configuration.addAnnotatedClass(Employee.class);
 			configuration.addAnnotatedClass(Venue.class);
 			configuration.addAnnotatedClass(Guest.class);
 			configuration.addAnnotatedClass(Food.class);
 			configuration.addAnnotatedClass(Registry.class);
-
-
+			//wooooooooooooooooowwwww
+			// these must be above the service registry
 			
-		} if(session == null) {
-			//singleton implementation lazily constructed
+			// service registry
+			ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
+					.applySettings(configuration.getProperties()).build();
+			sessionFactory = configuration.buildSessionFactory(serviceRegistry);
+
+			// ?????
+			
+
+		}
+		if (session == null) {
+			// singleton implementation lazily constructed
 			session = sessionFactory.openSession();
 		}
 		return session;
 	}
-	
+
 	public static void closeSession() {
 		session.close();
 		session = null;

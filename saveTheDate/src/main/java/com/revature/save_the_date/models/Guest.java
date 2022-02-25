@@ -1,7 +1,5 @@
 package com.revature.save_the_date.models;
 
-import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,8 +11,8 @@ import javax.persistence.Table;
 @Table
 public class Guest {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	
+	//@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "guest_id")
 	private String guest_id;
 
@@ -24,12 +22,12 @@ public class Guest {
 	@Column(name = "lname")
 	private String lname;
 	
+	@Id
 	@Column(name = "email")
 	private String email;
+	
 	@Column(name = "password")
 	private String password;
-
-	// getters and setters
 
 	public String getGuest_id() {
 		return guest_id;
@@ -76,6 +74,8 @@ public class Guest {
 		return "Guest [guest_id=" + guest_id + ", fname=" + fname + ", lname=" + lname + ", email=" + email
 				+ ", password=" + password + "]";
 	}
+
+	
 	
 	
 	

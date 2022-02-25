@@ -1,5 +1,6 @@
 package com.revature.save_the_date.models;
 
+
 import java.util.List;
 
 import javax.persistence.Column;
@@ -18,16 +19,12 @@ public class Venue {
 	private String venue_id;
 	@Column(name="venue_name")
 	private String venue_name;
-	@Column(name="pnone_no")
-	private int phone;
+	@Column(name="phone_no")
+	private int phone_no;
 	@Column(name="capacity")
 	private int capacity;	
 	@Column(name="address")
 	private String address;
-	
-	
-	
-	///getters and setters
 	public String getVenue_id() {
 		return venue_id;
 	}
@@ -40,11 +37,11 @@ public class Venue {
 	public void setVenue_name(String venue_name) {
 		this.venue_name = venue_name;
 	}
-	public int getContact() {
-		return phone;
+	public int getPhone_no() {
+		return phone_no;
 	}
-	public void setContact(int phone) {
-		this.phone = phone;
+	public void setPhone_no(int phone_no) {
+		this.phone_no = phone_no;
 	}
 	public int getCapacity() {
 		return capacity;
@@ -58,6 +55,11 @@ public class Venue {
 	public void setAddress(String address) {
 		this.address = address;
 	}
+	
+	
+	
+	///getters and setters
+	
 	
 	
 	

@@ -22,7 +22,7 @@ public class ConnectionFactory {
 	private ConnectionFactory() {
 		try {
 			ClassLoader loader = Thread.currentThread().getContextClassLoader();
-			prop.load(loader.getResourceAsStream("db.properties"));
+			prop.load(loader.getResourceAsStream("hibernate.properties"));
 		}catch(FileNotFoundException e) {
 			e.printStackTrace();
 		}catch(IOException e) {
