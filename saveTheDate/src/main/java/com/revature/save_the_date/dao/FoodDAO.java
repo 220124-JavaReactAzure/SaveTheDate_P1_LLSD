@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 
 import com.revature.save_the_date.hibernate.util.HibernateUtil;
 import com.revature.save_the_date.models.Food;
@@ -14,7 +15,9 @@ public class FoodDAO {
 	public boolean addFood(Food food) {
 		try {
 			Session session = HibernateUtil.getSession();
+			Transaction transaction = session.beginTransaction();
 			session.save(food);
+			transaction.commit();
 			HibernateUtil.closeSession();
 			return true;
 		} catch (HibernateException | IOException e) {

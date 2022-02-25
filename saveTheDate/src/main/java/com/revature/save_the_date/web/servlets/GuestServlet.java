@@ -30,10 +30,21 @@ public class GuestServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req,HttpServletResponse resp) throws ServletException, IOException {
 		//resp.setContentType("application/json");
+		String username = req.getParameter("email");
+		String password = req.getParameter("password");
 		
+		String json = new JSONObject()
+				.put("email", username)
+				.put("password", password).toString();
+		try {
+			Guest newGuest = mapper.readValue(json, Guest.class);
+		}catch (Exception e) {
+			// TODO: handle exception
+		}
 		
 		
 	}
+
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
