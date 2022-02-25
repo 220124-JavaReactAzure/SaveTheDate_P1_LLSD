@@ -1,6 +1,8 @@
 package com.revature.save_the_date.web.servlets;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.List;
 import java.util.Random;
 
 import javax.servlet.ServletException;
@@ -12,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.fasterxml.jackson.core.exc.StreamReadException;
 import com.fasterxml.jackson.databind.DatabindException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.revature.save_the_date.models.Guest;
 import com.revature.save_the_date.models.Venue;
 import com.revature.save_the_date.services.VenueService;
 
@@ -39,6 +42,46 @@ public class VenueServlet extends HttpServlet {
 						+ "<form action='request.getContextPath() %>/venue', method='post'>"
 						+ "Venue Name: <input type='text' name='VenueName'><br><br>"
 						+ "<input type='submit' value='register'</form>");
+		
+		PrintWriter writer = resp.getWriter();
+		String path = req.getPathInfo();
+		if (path == null) 
+			path = "";
+		
+		switch(path) {
+		case "/ID":
+		try {
+			String idParam = req.getParameter("venue_id");
+			if(idParam == null) {
+				resp.setStatus(400);
+				writer.write("Please include ?venue_id=# at the end of the url");
+				return;
+				}
+		
+			
+			int venueId = Integer.valueOf(idParam);
+			
+		
+			Venue venue = venueService.getVenueById(venueId);
+			if(venue == null) {
+				resp.setStatus(500);
+				return;
+			}
+			String payload = mapper.writeValueAsString(venue);
+			writer.write(payload);
+			resp.setStatus(200);
+		} catch (StreamReadException | DatabindException e) {
+			resp.setStatus(400);
+		}
+		break;
+	default:
+		List<Venue> venues = venueService.getAllVenues();
+		String payload = mapper.writeValueAsString(venues);
+		writer.write(payload);
+		resp.setStatus(200);
+		break;
+		}
+		
 	}
 
 	@Override

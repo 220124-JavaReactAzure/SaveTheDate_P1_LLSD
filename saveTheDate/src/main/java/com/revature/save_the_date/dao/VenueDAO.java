@@ -27,11 +27,29 @@ public class VenueDAO {
 	}
 	
 	public List<Venue> getAllVenues(){
-		return null;
+		try {
+			Session session = HibernateUtil.getSession();
+			List<Venue> venues = session.createQuery("from Venue").list();
+			return venues;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		} finally {
+			HibernateUtil.closeSession();
+		}
 	}
 	
 	public Venue getVenueById(int id) {
-		return null;
+		try {
+			Session session = HibernateUtil.getSession();
+			Venue venue = session.get(Venue.class, id);
+			return venue;
+		} catch (HibernateException | IOException e) {
+			e.printStackTrace();
+			return null;
+		} finally {
+			HibernateUtil.closeSession();
+		}
 	}
 	
 	public void updateVenueWithSessionMethod(Venue venue) {

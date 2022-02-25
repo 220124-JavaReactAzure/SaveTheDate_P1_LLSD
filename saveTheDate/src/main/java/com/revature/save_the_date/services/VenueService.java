@@ -17,12 +17,12 @@ public class VenueService {
 		return venueDAO.addVenue(venue);
 	}
 	
-	public List<Venue> getAllVenue(){
-		return null;
+	public List<Venue> getAllVenues(){
+		return venueDAO.getAllVenues();
 	}
 	
 	public Venue getVenueById(int id) {
-		return null;
+		return venueDAO.getVenueById(id);
 	}
 	
 	public void updateVenueWithSessionMethod(Venue venue) {

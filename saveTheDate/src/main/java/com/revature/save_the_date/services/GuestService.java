@@ -27,11 +27,14 @@ public class GuestService {
 	}
 
 	public void updateGuestWithSessionMethod(Guest guest) {
-		
+		guestDAO.updateGuestWithSessionMethod(guest);
 	}
 
 	public void updateGuestWithHQL(Guest guest) {
 
 	}
 
+	public void deleteGuest(int id) {
+		guestDAO.deleteGuest(id);
+	}
 }

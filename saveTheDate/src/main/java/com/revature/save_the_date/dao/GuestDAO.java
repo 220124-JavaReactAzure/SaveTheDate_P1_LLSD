@@ -36,7 +36,7 @@ public class GuestDAO {
 	public List<Guest> getAllGuests() {
 		try {
 			Session session = HibernateUtil.getSession();
-			List<Guest> guests = session.createQuery("from guest").list();
+			List<Guest> guests = session.createQuery("from Guest").list();
 			return guests;
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -62,7 +62,6 @@ public class GuestDAO {
 	public void updateGuestWithSessionMethod(Guest guest) {
 		try {
 			Session session = HibernateUtil.getSession();
-			// Updates and Deletes always start with a transaction and end with a commit
 			Transaction transaction = session.beginTransaction();
 			session.merge(guest);
 			transaction.commit();
@@ -74,15 +73,15 @@ public class GuestDAO {
 
 	}
 
-	// Not truly implemented
+	//TODO: IMPLEMENT PROPERLY
 
 	public void updateGuestWithHQL(Guest guest) {
 		try {
 			Session session = HibernateUtil.getSession();
 			Transaction transaction = session.beginTransaction();
 
-			Query query = (Query) session.createQuery("update guest set email='" + guest.getEmail() + "', fname='"
-					+ guest.getFname() + "', lame='" + guest.getLname() + "', plus_one='" 
+			Query query = (Query) session.createQuery("update Guest set email='" + guest.getEmail() + "', fname='"
+					+ guest.getFname() + "', lname='" + guest.getLname() + "', plus_one='" 
 					+ guest.getPlus_one() + "', food='" + guest.getFood() + "', plus_one_food'" 
 					+ guest.getPlus_one_food() + "', guest_type='" + guest.getGuest_type() 
 					+ " WHERE guest_id=" + guest.getGuest_id());
@@ -105,6 +104,7 @@ public class GuestDAO {
 	public void deleteGuest(int id) {
 		try {
 			Session session = HibernateUtil.getSession();
+			
 		} catch (HibernateException | IOException e) {
 			e.printStackTrace();
 		} finally {
