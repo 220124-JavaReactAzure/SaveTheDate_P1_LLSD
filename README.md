@@ -1,11 +1,11 @@
-## Save The Date
+# Save The Date
 
-# Project Description
+## Project Description
  - Save The Date is a wedding planner developed for a small wedding planner company.
    A user can create an account, login, register a wedding and hire a musician, florist,
    caterer and photographer of their choice.
    
-# Technologies Used
+## Technologies Used
  - Java v1.8
  - Tomcat 7
  - Hibernate v5.6.5
@@ -15,7 +15,7 @@
  - Spring Tool Suite 4
  - Maven 3.3.1
 
-# Features
+## Features
 
 *Functional*
  - Create user
@@ -29,11 +29,11 @@
  - Allow for the Wedding to be cancelled
  - Finish implementing the front end
  
- # Getting Started
+ ## Getting Started
   - git clone https://github.com/220124-JavaReactAzure/SaveTheDate_P1_LLSD.git
   - git checkout -b <your_branch> to create a new branch
   - git pull origin main
 
-# Contributors
+## Contributors
  - Lamar Lewis
  - Scott Damon
